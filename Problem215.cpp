@@ -86,7 +86,7 @@ unsigned long long WallPermutations
 */
 unsigned long long WallPermutations( const std::vector<Row>& rows, const std::vector<std::vector<size_t>>& compatible, size_t totalrows )
 {
-	//cache[i][j] == # ways to build a wall of size j+1 when the previous state is i
+	//cache[i][j] == # ways to build a wall of size j+1 when the previous row is rows[i]
 	//assuming that 0 is an invalid value => you can complete the wall from any state
 	std::vector<std::vector<unsigned long long>> cache( rows.size(), std::vector<unsigned long long>( totalrows, 0 ) );
 	return WallPermutations( cache, rows, compatible, totalrows, 0, 0 );
